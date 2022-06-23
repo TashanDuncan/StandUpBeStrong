@@ -6,7 +6,10 @@ const getAllExercises = asyncWrapper(async (req,res) =>{
     res.status(200).json({exercises})
 })
 
-const createExercise = asyncWrapper()
+const createExercise = asyncWrapper(async (req,res) => {
+    const exercise = await Exercise.create(req.body);
+    res.status(201).json(exercise)
+})
 
 const getExercise = asyncWrapper()
 

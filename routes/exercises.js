@@ -9,6 +9,6 @@ const {
     updateExercise
 } = require('../controllers/exercises')
 
-router.route('/').get(getAllExercises)
+router.route('/').get(getAllExercises).post(createExercise)
 
 module.exports = router

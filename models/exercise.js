@@ -5,6 +5,7 @@ const ExerciseSchema = new mongoose.Schema({
   name: {
     type: String,
     unique: true,
+    required: true
   },
   instructions: {
     preparation: String,
@@ -19,7 +20,7 @@ const ExerciseSchema = new mongoose.Schema({
   },
   video: String,
   image: String,
-  Classification: {
+  classification: {
     utility: String,
     mechanics: String,
     force: String,
