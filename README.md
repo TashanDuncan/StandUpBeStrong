@@ -4,7 +4,7 @@
 - [x] Setup Node/Express
 - [x] Create File Structure
 - [x] Create Exercise Database
-- [ ] Connect App to Database
+- [x] Connect App to Database
 - [ ] Create Exercise Model + Schema
 - [ ] Create CRUD Controllers
 - [ ] Create CRUD Routes (including 404)
