@@ -1,11 +1,11 @@
-# StandUpBeStrong Exersice DataBase API
+# StandUpBeStrong Exercise DataBase API
 
 ## Tasks
 - [x] Setup Node/Express
-- [x] Create file structure
-- [ ] Create exersice Database
+- [x] Create File Structure
+- [ ] Create Exercise Database
 - [ ] Connect App to Database
-- [ ] Create Exersice Model + Schema
+- [ ] Create Exercise Model + Schema
 - [ ] Create CRUD Controllers
 - [ ] Create CRUD Routes (including 404)
 - [ ] Create Frontend
