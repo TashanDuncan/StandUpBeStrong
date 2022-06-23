@@ -25,3 +25,5 @@ const ExerciseSchema = new mongoose.Schema({
     force: String,
   },
 });
+
+module.exports = mongoose.model('Exercise', ExerciseSchema)

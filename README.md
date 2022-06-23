@@ -5,7 +5,7 @@
 - [x] Create File Structure
 - [x] Create Exercise Database
 - [x] Connect App to Database
-- [ ] Create Exercise Model + Schema
+- [x] Create Exercise Model + Schema
 - [ ] Create CRUD Controllers
 - [ ] Create CRUD Routes (including 404)
 - [ ] Create Frontend
