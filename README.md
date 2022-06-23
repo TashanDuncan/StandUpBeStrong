@@ -3,7 +3,7 @@
 ## Tasks
 - [x] Setup Node/Express
 - [x] Create File Structure
-- [ ] Create Exercise Database
+- [x] Create Exercise Database
 - [ ] Connect App to Database
 - [ ] Create Exercise Model + Schema
 - [ ] Create CRUD Controllers
