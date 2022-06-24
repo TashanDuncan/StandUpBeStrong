@@ -5,7 +5,7 @@ const ExerciseSchema = new mongoose.Schema({
   name: {
     type: String,
     unique: true,
-    required: true
+    required: true,
   },
   instructions: {
     preparation: String,
@@ -16,10 +16,13 @@ const ExerciseSchema = new mongoose.Schema({
     synergists: Array,
     dynamicStabilizers: Array,
     stabilizer: Array,
-    antagonistStabilizers: Array
+    antagonistStabilizers: Array,
   },
   video: String,
-  image: String,
+  image: {
+    type: String,
+    default: './images/iSquat.jpg',
+  },
   classification: {
     utility: String,
     mechanics: String,
@@ -27,4 +30,4 @@ const ExerciseSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Exercise', ExerciseSchema)
+module.exports = mongoose.model('Exercise', ExerciseSchema);
