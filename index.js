@@ -3,14 +3,16 @@ const app = express();
 const exercises = require('./routes/exercises')
 const connectDB = require('./db/connect');
 require('dotenv').config();
+const notFound = require('./middleware/not-found')
 
+//middleware
 app.use(express.static('./public'))
 app.use(express.json())
 
 
 //routes
 app.use('/api/v1/exercises', exercises)
-
+app.use(notFound)
 const port = process.env.PORT || 3000;
 const start = async () => {
   try {
