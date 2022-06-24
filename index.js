@@ -4,10 +4,15 @@ const exercises = require('./routes/exercises')
 const connectDB = require('./db/connect');
 require('dotenv').config();
 const notFound = require('./middleware/not-found')
+const bodyParser = require('body-parser')
+
 
 //middleware
 app.use(express.static('./public'))
 app.use(express.json())
+app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.json());
+
 
 
 //routes

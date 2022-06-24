@@ -15,16 +15,120 @@
         class="img-fluid"
         width="400"
       />
-      <h1>Excercise API</h1>
+      <h1>Excercise REST API</h1>
     </div>
     <div class="text-center mb-5">
-      <button class="btn btn-primary btn-lg">Add Excercise</button>
+      <button
+        type="button"
+        class="btn btn-primary btn-lg"
+        data-toggle="modal"
+        data-target="#exerciseModal"
+      >
+        Add Excercise
+      </button>
       <button class="btn btn-primary btn-lg">Visit Repository</button>
     </div>
-    <section class="exercises-container container">
-      <p class="loading-text text-center" style="visibility: hidden;">Loading...</p>
-      <div class="exercises"></div>
+    <section class="exercises-container container ">
+      <p class="loading-text text-center" style="visibility: hidden">
+        Loading...
+      </p>
+      <div class="container exercises d-flex justify-content-start align-items-center"></div>
     </section>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exerciseModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exerciseModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exerciseModalLabel">Add Excercise</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="/api/v1/exercises" method="post" id="exercise-form">
+              <div class="form-group mb-2">
+                <label for="name">Exercise Name:</label><br />
+                <input type="text" id="name" name="name" /><br />
+              </div>
+              <div class="form-group mb-2">
+                <label for="utility">Utility:</label>
+                <select id="utility" name="classification.utility">
+                  <option value="basic">Basic</option>
+                  <option value="Auxiliary">Auxiliary</option>
+                </select>
+              </div>
+              <div class="form-group mb-2">
+                <label for="mechanics">Mechanics:</label>
+                <select id="mechanics" name="classification.mechanics">
+                  <option value="compound">Compound</option>
+                  <option value="isolation">isolation</option>
+                </select>
+              </div>
+
+              <div class="form-group mb-2">
+                <label for="force">Force:</label>
+                <select id="force" name="classification.force">
+                  <option value="push">Push</option>
+                  <option value="pull">Pull</option>
+                  <option value="pushpull">Push & Pull</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="target">Target Muscle:</label><br />
+                <input type="text" id="target" name="muscles.target" /><br />
+              </div>
+
+              <div class="form-group">
+                <label for="preparation">Preparation:</label><br />
+                <textarea id="preparation" name="instructions.preparation"></textarea><br />
+              </div>
+              <div class="form-group">
+                <label for="execution">Execution:</label><br />
+                <textarea id="execution" name="instructions.execution"></textarea><br />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary" form="exercise-form">Add Exercise</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
     <!-- axios -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"

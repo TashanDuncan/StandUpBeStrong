@@ -1,5 +1,6 @@
 const exercisesDOM = document.querySelector('.exercises')
 const loadingDOM = document.querySelector('.loading-text')
+const formDom = document.querySelector('.exercise-form')
 
 const showExercises = async() => {
     loadingDOM.style.visibility = 'visible'
@@ -15,7 +16,7 @@ const showExercises = async() => {
           const allExercises = exercises.map((exercise) => {
             console.log(exercise)
             const {name,image} = exercise
-            return `<div class="card" style="width: 18rem;">
+            return `<div class="card m-3" style="width: 18rem;">
             <img class="card-img-top" src="${image}" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title text-center"><b>${name}</b></h5>
@@ -26,7 +27,7 @@ const showExercises = async() => {
                 <li>Force: ${exercise.classification.force}</li>
               </ul>
 
-              <a href="/exercises/${name}" class="btn btn-primary">More Info</a>
+              <a href="/exercise.html?name=${name}" class="btn btn-primary">More Info</a>
               <a href="#" class="btn btn-danger">Delete</a>
             </div>
           </div>
@@ -43,3 +44,4 @@ const showExercises = async() => {
 }
 
 showExercises()
+    
