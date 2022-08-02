@@ -28,7 +28,7 @@ const showExercises = async() => {
               </ul>
 
               <a href="/exercise.html?name=${name}" class="btn btn-primary">More Info</a>
-              <a href="#" class="btn btn-danger">Delete</a>
+              <a href="#" class="btn btn-danger delete-btn" data-name="${name}">Delete</a>
             </div>
           </div>
           `
@@ -44,4 +44,22 @@ const showExercises = async() => {
 }
 
 showExercises()
-    
+
+
+// delete exercise /api/exercises/:name
+
+exercisesDOM.addEventListener('click', async (e) => {
+    const el = e.target
+    console.log(el)
+    if (el.classList.contains('delete-btn')) {
+      loadingDOM.style.visibility = 'visible'
+      const name = el.dataset.name
+      try {
+        await axios.delete(`/api/v1/exercises/${name}`)
+        showExercises()
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    loadingDOM.style.visibility = 'hidden'
+  })
